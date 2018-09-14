@@ -1,0 +1,284 @@
+\hypertarget{classMatrix}{}\section{Matrix Class Reference}
+\label{classMatrix}\index{Matrix@{Matrix}}
+
+
+The matrix class. The crux of any linear algebra library.  
+
+
+
+
+{\ttfamily \#include $<$matrix.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMatrix_a2dba13c45127354c9f75ef576f49269b}{Matrix} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix_adfbeb67cc3c43d96c53f881d79f919cb}{Matrix} (int, int)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix_a0b9cfa2302a0273afb1b26e501f93abc}{Matrix} (const \hyperlink{classMatrix}{Matrix} \&)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \& \hyperlink{classMatrix_ae3695797299c70849667c22a098db137}{operator=} (const \hyperlink{classMatrix}{Matrix} \&)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMatrix_a9b1c3627f573d78a2f08623fdfef990f}\label{classMatrix_a9b1c3627f573d78a2f08623fdfef990f}} 
+\hyperlink{classMatrix_a9b1c3627f573d78a2f08623fdfef990f}{$\sim$\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int \hyperlink{classMatrix_a756736b31a372037de52b9ed83bc06b3}{get\+Rows} ()
+\begin{DoxyCompactList}\small\item\em Row getter method. \end{DoxyCompactList}\item 
+int \hyperlink{classMatrix_a718a524577eb195b94e8abb7c87109a5}{get\+Cols} ()
+\begin{DoxyCompactList}\small\item\em Column getter method. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{classMatrix_a0d0a0bd2c4b2de17f34e9b233b6b03f7}{link\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Links matrix to variable. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{classMatrix_a9a98da6cf9820fa14d6077d3ef0b83d7}{link\+Row} (int)
+\begin{DoxyCompactList}\small\item\em Links row to variable. \end{DoxyCompactList}\item 
+double \hyperlink{classMatrix_aaaf559a0afb0412c23d6f9485bbf94a8}{get\+Elem} (int, int)
+\begin{DoxyCompactList}\small\item\em Element getter method. \end{DoxyCompactList}\item 
+void \hyperlink{classMatrix_a637385af993e73bb5e3c93fd9452b7c0}{set\+Elem} (int, int, double)
+\begin{DoxyCompactList}\small\item\em Element setter method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMatrix_a780772b48a2e99f4995bc97f1b856323}\label{classMatrix_a780772b48a2e99f4995bc97f1b856323}} 
+void \hyperlink{classMatrix_a780772b48a2e99f4995bc97f1b856323}{display} ()
+\begin{DoxyCompactList}\small\item\em Prints the elements of the matrix in a more readable format. \end{DoxyCompactList}\item 
+bool \hyperlink{classMatrix_a788b59f09c9ff8a0c9d1c4377a4d8409}{equals} (\hyperlink{classMatrix}{Matrix})
+\begin{DoxyCompactList}\small\item\em Checks if two matrices are equal. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{classMatrix_ae23f817021383e3c8636a714dcba1d21}{transpose} ()
+\begin{DoxyCompactList}\small\item\em Simple matrix transposition. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{classMatrix_ac355ffa8b66de8a574c26cf14c2db8ca}{multiply} (\hyperlink{classMatrix}{Matrix} $\ast$)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} multiplication. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{classMatrix_ada74bf1622c76b5a7f29b7ceaaa56532}{threaded\+Multiply} (\hyperlink{classMatrix}{Matrix} $\ast$, int)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} multiplication with multithreading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The matrix class. The crux of any linear algebra library. 
+
+Stores values with pointers rather than vectors for performance gains. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMatrix_a2dba13c45127354c9f75ef576f49269b}\label{classMatrix_a2dba13c45127354c9f75ef576f49269b}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Sets rows and columns to zero and matrix to nullptr. \mbox{\Hypertarget{classMatrix_adfbeb67cc3c43d96c53f881d79f919cb}\label{classMatrix_adfbeb67cc3c43d96c53f881d79f919cb}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{c }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+Sets the row and column counts and allocates necessary space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The number of rows the matrix will have. \\
+\hline
+{\em c} & The number of columns the matrix will have. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMatrix_a0b9cfa2302a0273afb1b26e501f93abc}\label{classMatrix_a0b9cfa2302a0273afb1b26e501f93abc}} 
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{Matrix()}{Matrix()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Matrix\+::\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{classMatrix}{Matrix} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Copy Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMatrix_a788b59f09c9ff8a0c9d1c4377a4d8409}\label{classMatrix_a788b59f09c9ff8a0c9d1c4377a4d8409}} 
+\index{Matrix@{Matrix}!equals@{equals}}
+\index{equals@{equals}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily bool Matrix\+::equals (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix}}]{other }\end{DoxyParamCaption})}
+
+
+
+Checks if two matrices are equal. 
+
+True if matrices are equal, false otherwise. \mbox{\Hypertarget{classMatrix_a718a524577eb195b94e8abb7c87109a5}\label{classMatrix_a718a524577eb195b94e8abb7c87109a5}} 
+\index{Matrix@{Matrix}!get\+Cols@{get\+Cols}}
+\index{get\+Cols@{get\+Cols}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{get\+Cols()}{getCols()}}
+{\footnotesize\ttfamily int Matrix\+::get\+Cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Column getter method. 
+
+\begin{DoxyReturn}{Returns}
+The column count of the matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_aaaf559a0afb0412c23d6f9485bbf94a8}\label{classMatrix_aaaf559a0afb0412c23d6f9485bbf94a8}} 
+\index{Matrix@{Matrix}!get\+Elem@{get\+Elem}}
+\index{get\+Elem@{get\+Elem}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{get\+Elem()}{getElem()}}
+{\footnotesize\ttfamily double Matrix\+::get\+Elem (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j }\end{DoxyParamCaption})}
+
+
+
+Element getter method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The ith row of the matrix. \\
+\hline
+{\em j} & The jth row of the matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ijth element of the matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_a756736b31a372037de52b9ed83bc06b3}\label{classMatrix_a756736b31a372037de52b9ed83bc06b3}} 
+\index{Matrix@{Matrix}!get\+Rows@{get\+Rows}}
+\index{get\+Rows@{get\+Rows}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{get\+Rows()}{getRows()}}
+{\footnotesize\ttfamily int Matrix\+::get\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Row getter method. 
+
+\begin{DoxyReturn}{Returns}
+The row count of the matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_a0d0a0bd2c4b2de17f34e9b233b6b03f7}\label{classMatrix_a0d0a0bd2c4b2de17f34e9b233b6b03f7}} 
+\index{Matrix@{Matrix}!link\+Matrix@{link\+Matrix}}
+\index{link\+Matrix@{link\+Matrix}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{link\+Matrix()}{linkMatrix()}}
+{\footnotesize\ttfamily double $\ast$$\ast$ Matrix\+::link\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Links matrix to variable. 
+
+Returns pointer to the matrix instance variable. Potentially unsafe since the 2D matrix array may be destructively altered.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the 2D array containing the values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_a9a98da6cf9820fa14d6077d3ef0b83d7}\label{classMatrix_a9a98da6cf9820fa14d6077d3ef0b83d7}} 
+\index{Matrix@{Matrix}!link\+Row@{link\+Row}}
+\index{link\+Row@{link\+Row}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{link\+Row()}{linkRow()}}
+{\footnotesize\ttfamily double $\ast$ Matrix\+::link\+Row (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Links row to variable. 
+
+Returns pointer to the ith row of the matrix instance variable. Potentially unsafe since the row array may be destructively altered.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the array containing the values in the ith row of the matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_ac355ffa8b66de8a574c26cf14c2db8ca}\label{classMatrix_ac355ffa8b66de8a574c26cf14c2db8ca}} 
+\index{Matrix@{Matrix}!multiply@{multiply}}
+\index{multiply@{multiply}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{multiply()}{multiply()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} Matrix\+::multiply (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix} $\ast$}]{other }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} multiplication. 
+
+Single threaded matrix multiplication. Necessary for when the computations are not worth the overhead of creating threads.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Pointer to a matrix to multiply with the current object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMatrix}{Matrix} object that is the product of the two matrices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_ae3695797299c70849667c22a098db137}\label{classMatrix_ae3695797299c70849667c22a098db137}} 
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} \& Matrix\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classMatrix}{Matrix} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \hyperlink{classMatrix}{Matrix} being assigned to this matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classMatrix}{Matrix} with new values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_a637385af993e73bb5e3c93fd9452b7c0}\label{classMatrix_a637385af993e73bb5e3c93fd9452b7c0}} 
+\index{Matrix@{Matrix}!set\+Elem@{set\+Elem}}
+\index{set\+Elem@{set\+Elem}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{set\+Elem()}{setElem()}}
+{\footnotesize\ttfamily void Matrix\+::set\+Elem (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{int}]{j,  }\item[{double}]{val }\end{DoxyParamCaption})}
+
+
+
+Element setter method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & The ith row of the matrix. \\
+\hline
+{\em j} & The jth row of the matrix. \\
+\hline
+{\em val} & The value to be placed in the ijth element of the matrix. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMatrix_ada74bf1622c76b5a7f29b7ceaaa56532}\label{classMatrix_ada74bf1622c76b5a7f29b7ceaaa56532}} 
+\index{Matrix@{Matrix}!threaded\+Multiply@{threaded\+Multiply}}
+\index{threaded\+Multiply@{threaded\+Multiply}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{threaded\+Multiply()}{threadedMultiply()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} Matrix\+::threaded\+Multiply (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix} $\ast$}]{other,  }\item[{int}]{n\+Threads }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} multiplication with multithreading. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Pointer to a matrix to multiply with the current object. \\
+\hline
+{\em n\+Threads} & The number of threads to use in the computation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMatrix}{Matrix} object that is the product of the two matrices. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMatrix_ae23f817021383e3c8636a714dcba1d21}\label{classMatrix_ae23f817021383e3c8636a714dcba1d21}} 
+\index{Matrix@{Matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix@{Matrix}}
+\subsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} Matrix\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Simple matrix transposition. 
+
+\begin{DoxyReturn}{Returns}
+A new \hyperlink{classMatrix}{Matrix} object that is the transpose of the original matrix. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/matrix.\+hpp\end{DoxyCompactItemize}
